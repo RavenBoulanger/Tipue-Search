@@ -216,21 +216,17 @@ http://www.tipue.com/search
                               // "search tipue -jquery"
                               // "search -jquery tipue"
                               // "-jquery search tipue"
-                              console.log("before: " + d_w);
                               var exclude_w = [];
                               // you need to go backwards otherwise you will skip over some terms as their index changes
                               for (var x = d_w.length -1; x >= 0; x--) {
-                                   console.log(x);
                                    // if there is a match remove it from d_w and add it to the start of exclude_w
                                         if (d_w[x].match('^-')) {
                                              exclude_w.unshift( d_w.splice(x,1)[0] );
                                         } 
                                    // otherwise do nothing
                                    }
-                              console.log(d_w + " and " + exclude_w);
                               // add exclude_w back to the end of d_w
                               d_w = d_w.concat(exclude_w);
-                              console.log("after: " + d_w);
 
                               for (var i = 0; i < tipuesearch_in.pages.length; i++)
                               {
